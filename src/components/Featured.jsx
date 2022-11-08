@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { convertTime } from "../utils";
 const Featured = () => {
   const [movies, setMovies] = useState([]);
@@ -27,7 +28,8 @@ const Featured = () => {
       </div>
       <div className="grid-movie">
         {movies.map((movie) => (
-          <article key={movie._id} className="movie-item">
+          <Link to={`/movie/${movie._id}`} key={movie._id} className="movie-item">
+            <article>
             <img src={movie.coverImage} alt={movie.name} className="movie-image" />
             <span className="movie-genre">{movie.genre}</span>
             <div className="movie-time">
@@ -42,6 +44,7 @@ const Featured = () => {
             </div>
             <h3 className="movie-name">{movie.name}</h3>
           </article>
+          </Link>
         ))}
       </div>
     </section>
