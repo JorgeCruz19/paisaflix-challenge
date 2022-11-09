@@ -1,6 +1,6 @@
 const Movie = () => {
   return (
-    <div>Movie</div>
+    <div style={{height: "200px"}}>Movie</div>
   )
 }
 
