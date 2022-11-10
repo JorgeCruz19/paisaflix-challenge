@@ -80,6 +80,7 @@
   height: 1130px;
   min-width: 854px;
   position: absolute;
+  overflow: hidden;
   right: 0;
   top: 0;
 }

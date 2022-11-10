@@ -1,25 +1,6 @@
-import { useEffect, useState } from "react";
 import { generateStarsByCount, convertTime } from "../utils";
 
-const Hero = () => {
-  const [hero, setHero] = useState([]);
-
-  const getHero = async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/hero`);
-    const data = await response.json();
-    return data;
-  };
-
-  useEffect(() => {
-    getHero()
-      .then((res) => {
-        if (res.success) {
-          setHero(res.data);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
+const Hero = ({ hero }) => {
   return (
     <section className="hero-section">
       <div className="hero">
