@@ -25,15 +25,20 @@ a {
 
 ul {
   list-style-type: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+html{
+  overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-family);
   background-color: #000000;
+  font-family: var(--font-family);
+  margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -43,14 +48,14 @@ h1 {
 }
 
 button {
+  background-color: #1a1a1a;
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
+  padding: 0.6em 1.2em;
   transition: border-color 0.25s;
 }
 button:hover {

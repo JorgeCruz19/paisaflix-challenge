@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Avatar from "../assets/avatar.jpg";
 
-const Navbar = () => {
+const Navbar = ({ setIsOpen, isOpen }) => {
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/")[1];
@@ -9,24 +9,48 @@ const Navbar = () => {
   return (
     <header className="navbar-container">
       <nav className="navbar">
-        <NavLink to="/">
-          <h1 className="navbar-title">Paisaflix</h1>
-        </NavLink>
+        <button className="menu-hamburguer" onClick={() => setIsOpen(!isOpen)}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" class="" fill="CurrentColor">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4 7.99935C4 7.26298 4.59696 6.66602 5.33333 6.66602H26.6667C27.4031 6.66602 28 7.26298 28 7.99935C28 8.73572 27.4031 9.33268 26.6667 9.33268H5.33333C4.59696 9.33268 4 8.73572 4 7.99935ZM4 15.9993C4 15.2629 4.59696 14.666 5.33333 14.666H26.6667C27.4031 14.666 28 15.2629 28 15.9993C28 16.7357 27.4031 17.3327 26.6667 17.3327H5.33333C4.59696 17.3327 4 16.7357 4 15.9993ZM4 23.9993C4 23.2629 4.59696 22.666 5.33333 22.666H26.6667C27.4031 22.666 28 23.2629 28 23.9993C28 24.7357 27.4031 25.3327 26.6667 25.3327H5.33333C4.59696 25.3327 4 24.7357 4 23.9993Z"
+            ></path>
+          </svg>
+        </button>
+        <div className={`primary-navigation ${isOpen ? "isActive" : ""}`}>
+          <button className="close-menu" onClick={() => setIsOpen(!isOpen)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 12 12"
+              class="m-relative s-absolute svg-icon s-cursor-pointer close-topbar fill s-px-05 s-py-1"
+              fill="currentColor"
+            >
+              <rect x="0.75" y="1.625" width="1.3125" height="14" rx="0.65625" transform="rotate(-45 0.75 1.625)"></rect>
+              <rect x="1.625" y="11.6875" width="1.3125" height="14" rx="0.65625" transform="rotate(-135 1.625 11.6875)"></rect>
+            </svg>
+          </button>
+          <NavLink to="/">
+            <h1 className="navbar-title">Paisaflix</h1>
+          </NavLink>
 
-        <ul className="navbar-menu">
-          <li className={`navbar-item  ${pathname == "/" && "is-active"} `}>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li className={`navbar-item  ${splitLocation == "contact" && "is-active"} `}>
-            <NavLink to="/contact">Contact us</NavLink>
-          </li>
-          <li className={`navbar-item  ${splitLocation == "faq" && "is-active"} `}>
-            <NavLink to="/faq">FAQ</NavLink>
-          </li>
-          <li className={`navbar-item  ${splitLocation == "pricing" && "is-active"} `}>
-            <NavLink to="/pricing">Princig</NavLink>
-          </li>
-        </ul>
+          <ul className="navbar-menu">
+            <li className={`navbar-item  ${pathname == "/" && "is-active"} `}>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li className={`navbar-item  ${splitLocation == "contact" && "is-active"} `}>
+              <NavLink to="/">Contact us</NavLink>
+            </li>
+            <li className={`navbar-item  ${splitLocation == "faq" && "is-active"} `}>
+              <NavLink to="/">FAQ</NavLink>
+            </li>
+            <li className={`navbar-item  ${splitLocation == "pricing" && "is-active"} `}>
+              <NavLink to="/">Princig</NavLink>
+            </li>
+          </ul>
+        </div>
         <div className="secondary-navigation">
           <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="navbar-search">
             <path

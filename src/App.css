@@ -1,6 +1,7 @@
 .container {
   margin: 0 auto;
   max-width: 1440px;
+  overflow-x: hidden;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
@@ -12,13 +13,20 @@
 }
 
 .navbar {
-  align-items: center;
-  display: flex;
-  height: 68px;
   left: 0;
   position: absolute;
   right: 0;
   top: 1.8rem;
+}
+
+.primary-navigation {
+  align-items: center;
+  display: flex;
+  height: 68px;
+}
+
+.menu-hamburguer {
+  display: none;
 }
 
 .secondary-navigation {
@@ -104,7 +112,7 @@
 }
 
 .hero-content {
-  z-index: 10;
+  z-index: 9;
 }
 
 .hero-content h1 {
@@ -160,7 +168,7 @@
 
 .trailers-section {
   position: relative;
-  z-index: 10;
+  z-index: 9;
 }
 
 .trailers-section {
@@ -376,6 +384,7 @@
   align-items: center;
   column-gap: 1.8rem;
   display: flex;
+  flex-wrap: wrap;
   max-width: 860px;
 }
 
@@ -388,4 +397,199 @@
 .footer-item:nth-of-type(3) > address svg,
 .footer-item:nth-of-type(3) > a svg {
   margin-right: 0.8rem;
+}
+
+@media screen and (max-width: 920px) {
+  .navbar {
+    align-items: center;
+    display: flex;
+    height: 68px;
+  }
+
+  .menu-hamburguer {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    font-size: initial;
+    outline: 0;
+    padding: 0.4rem;
+    transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .menu-hamburguer:focus {
+    outline: none;
+  }
+
+  .menu-hamburguer:hover {
+    background-color: #686868;
+  }
+
+  .menu-hamburguer svg {
+    fill: #fff;
+  }
+
+  .primary-navigation {
+    align-items: center;
+    background-color: #171717;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    left: 0;
+    padding: 2rem;
+    position: fixed;
+    row-gap: 3rem;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 999;
+  }
+
+  .close-menu {
+    background-color: rgba(255, 255, 255, 0.32);
+    border: 0;
+    outline: 0;
+    padding: 0.4rem;
+    font-size: initial;
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .close-menu:focus {
+    border: 0;
+    outline: 0;
+  }
+
+  .close-menu svg {
+    fill: #fff;
+  }
+
+  .primary-navigation.isActive {
+    transform: translateX(0);
+    z-index: 10;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .navbar-item {
+    margin-bottom: 1rem;
+  }
+
+  .navbar-item:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .movie-genre {
+    font-size: 0.9rem;
+    padding: 0.1rem 1rem;
+  }
+
+  .movie-time {
+    bottom: 6rem;
+  }
+
+  .movie-name {
+    bottom: 3rem;
+    font-size: 1.8rem;
+  }
+
+  .section-footer {
+    column-gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-image {
+    left: 0;
+  }
+  .hero-content button {
+    font-size: 1.2rem;
+    padding: 1.2rem 4rem;
+  }
+
+  .movie-title {
+    font-size: 2rem;
+  }
+  .movie-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .section-footer {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  .footer-title {
+    font-size: 3rem;
+  }
+
+  .footer-item {
+    text-align: center;
+  }
+
+  .footer-item:nth-of-type(3) {
+    justify-content: center;
+  }
+
+  .footer-item:nth-of-type(3) > address,
+  .footer-item:nth-of-type(3) > a {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .trailers-section {
+    padding-bottom: 8rem;
+  }
+
+  .trailers {
+    row-gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-movie {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    row-gap: 2rem;
+  }
+
+  .movie-item:nth-child(1) {
+    grid-column: auto;
+  }
+
+  .movie-item:nth-child(2) {
+    grid-column: auto;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-content p:first-of-type {
+    width: auto;
+  }
+  .trailers-section {
+    padding-bottom: 8rem;
+  }
+
+  .trailers {
+    row-gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
 }
