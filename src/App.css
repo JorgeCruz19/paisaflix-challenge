@@ -29,6 +29,10 @@
   display: none;
 }
 
+.close-menu{
+  display: none;
+}
+
 .secondary-navigation {
   align-items: center;
   display: flex;

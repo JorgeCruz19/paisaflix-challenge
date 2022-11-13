@@ -10,10 +10,10 @@ const Navbar = ({ setIsOpen, isOpen }) => {
     <header className="navbar-container">
       <nav className="navbar">
         <button className="menu-hamburguer" onClick={() => setIsOpen(!isOpen)}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" class="" fill="CurrentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="CurrentColor">
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M4 7.99935C4 7.26298 4.59696 6.66602 5.33333 6.66602H26.6667C27.4031 6.66602 28 7.26298 28 7.99935C28 8.73572 27.4031 9.33268 26.6667 9.33268H5.33333C4.59696 9.33268 4 8.73572 4 7.99935ZM4 15.9993C4 15.2629 4.59696 14.666 5.33333 14.666H26.6667C27.4031 14.666 28 15.2629 28 15.9993C28 16.7357 27.4031 17.3327 26.6667 17.3327H5.33333C4.59696 17.3327 4 16.7357 4 15.9993ZM4 23.9993C4 23.2629 4.59696 22.666 5.33333 22.666H26.6667C27.4031 22.666 28 23.2629 28 23.9993C28 24.7357 27.4031 25.3327 26.6667 25.3327H5.33333C4.59696 25.3327 4 24.7357 4 23.9993Z"
             ></path>
           </svg>
@@ -25,7 +25,7 @@ const Navbar = ({ setIsOpen, isOpen }) => {
               width="24"
               height="24"
               viewBox="0 0 12 12"
-              class="m-relative s-absolute svg-icon s-cursor-pointer close-topbar fill s-px-05 s-py-1"
+              className="m-relative s-absolute svg-icon s-cursor-pointer close-topbar fill s-px-05 s-py-1"
               fill="currentColor"
             >
               <rect x="0.75" y="1.625" width="1.3125" height="14" rx="0.65625" transform="rotate(-45 0.75 1.625)"></rect>
